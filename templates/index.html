@@ -1,0 +1,123 @@
+{% extends "_base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="px-4 mt-4 mx-auto max-w-7xl sm:px-6">
+    <div class="relative pt-6 pb-16 sm:pb-24">
+        <nav class="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
+            <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+                <div class="flex items-center justify-between w-full md:w-auto">
+                    <a href="#"><span class="sr-only">Company Name</span>
+                        <img class="w-auto h-8 sm:h-10" src="https://www.svgrepo.com/show/448244/pack.svg" loading="lazy" width="202" height="40">
+                    </a>
+                    <div class="flex items-center -mr-2 md:hidden">
+                        <button class="inline-flex items-center justify-center p-2 text-gray-400 bg-gray-50 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-50"  type="button" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:flex md:space-x-10 list-none">
+                <li>
+                    <a href="#" class="text-base font-normal text-gray-500 list-none hover:text-gray-900"
+                        target="">Pricing</a>
+                </li>
+                <li>
+                    <a href="#" class="text-base font-normal text-gray-500 list-none hover:text-gray-900"
+                        target="">Gallary
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-base font-normal text-gray-500 list-none hover:text-gray-900"
+                        target="_blank">Blog
+                    </a>
+                </li>
+            </div>
+            <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
+                <div class="inline-flex rounded-full shadow">
+                    <div href="#"
+                        class="inline-flex items-center px-4 py-2 text-base text-gray-900 bg-white border border-transparent rounded-full cursor-pointer font-base hover:bg-gray-50 ">
+                        Sign in
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class=" box-content w-32 h-32 border-4 border-slate-500 p-4 text-center rounded text-center rounded font-ansana text-2xl">
+	สวัสดีประเทศไทย
+</div>
+
+<div class="flex flex-row gap-2">
+	<div class="p-4 text-white bg-red-500">1</div>
+	<div class="p-4 text-white bg-red-500">2</div>
+	<div class="p-4 text-white bg-red-500">3</div>
+	<div class="p-4 text-white bg-red-500">4</div>
+	<div class="p-4 text-white bg-red-500">5</div>
+	<div class="p-4 text-white bg-red-500">6</div>
+</div>
+
+<div class="mt-6">
+    <h1 id="head" class="text-2xl font-kanit">สวัสดีชาวไทย</h1>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick='document.getElementById("head").style.color = "red"'>change it</button>
+</div>
+
+
+<div id="currentDateTime" class="mt-4 text-4xl font-kanit">
+    <script>UpdateTime();</script>
+</div>
+
+<div class="mt-4 flex">
+    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold
+    hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent
+    rounded" onclick="document.getElementById('myImage').src = '{% static 'images/Idle.png' %}'">แมวยืน</button>
+    <img id="myImage" src="{% static 'images/Idle.png' %}" width="200px" alt="Idle Image">
+    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold
+    hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent
+    rounded"onclick="document.getElementById('myImage').src = '{% static 'images/Slide.png' %}'">แมวสไลด์</button>
+</div>
+
+
+<div class="mt-4">
+    <div>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full mt-2 font-sarabun"
+        onclick="DisplayTable('visible')">แสดงตาราง</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full mt-2 font-sarabun"
+        onclick="DisplayTable('hidden')">ซ่อนตาราง</button>
+    </div>
+    <table id="myTable" class="table-auto border-2 border-slate-900">
+        <caption>ตารางสินค้า</caption>
+        <tr class="table-auto border-2 border-slate-900">
+            <th class="bg-blue-500 text-white border-slate-900">รายการที่ 1</th>
+            <th class="bg-blue-500 text-white border-2 border-slate-900">รายการที่ 2</th>
+            <th class="bg-blue-500 text-white border-slate-900">รายการที่ 3</th>
+        </tr>
+        <tr class="table-auto border-2 border-slate-900">
+            <th class="border-2 border-slate-900">324</th>
+            <th class="border-2 border-slate-900">657</th>
+            <th class="border-2 border-slate-900">318</th>
+        </tr>
+        <tr class="table-auto border-2 border-slate-900">
+            <th class="border-2 border-slate-900">999</th>
+            <th class="border-2 border-slate-900">777</th>
+            <th class="border-2 border-slate-900">888</th>
+        </tr>
+    </table>
+</div>
+
+<div class="mt-4">
+    number #1<input class="ml-2 border-2 border-slate-900" typ="number" id="num1"><br/>
+    number #2<input class="ml-2 border-2 border-slate-900" typ="number" id="num2"><br/>
+    number #3<input class="ml-2 border-2 border-slate-900" typ="number" id="num3"><br/>
+    <button class="bg-blue-500 rounded border-2 border-slate-900" onclick="calAverage()">Submit</button>
+</div>
+<div class="mt-4 text-2xl font-semibold text black" id="result"></div>
+{% endblock %}
